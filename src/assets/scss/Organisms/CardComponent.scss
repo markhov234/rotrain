@@ -1,0 +1,46 @@
+$card-color-hard: #d55952;
+.card {
+  &-component {
+    background-image: url("../../../public/images/card-background-01.jpg");
+    background-size: cover;
+    width: 300px;
+    outline: 6px black solid;
+    margin-left: 15px;
+    height: 118px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    & .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  &-difficulty {
+    // margin: 10px 0 10px 10px;
+
+    & .details {
+      margin-left: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin-bottom: 10px;
+    }
+  }
+  &-button {
+    height: fit-content;
+    margin: auto 10px 10px 0;
+  }
+  &.sub {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 0 0 10px;
+    -webkit-text-stroke: 5px; // Add a stroke around the text
+    text-align: left;
+    paint-order: stroke fill;
+    letter-spacing: 0.5px;
+    &.-hard {
+      color: $card-color-hard;
+    }
+  }
+}

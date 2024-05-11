@@ -1,0 +1,66 @@
+$button-background-green: #38690e;
+
+.title {
+  font-size: 36px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 0 12px 0;
+  -webkit-text-stroke: 5px; // Add a stroke around the text
+  text-align: center;
+  paint-order: stroke fill;
+  letter-spacing: 0.5px;
+}
+
+.h2 {
+  font-size: 24px;
+  &.title.right {
+    text-align: right;
+  }
+  &.title.left {
+    -webkit-text-stroke: 5px; // Add a stroke around the text
+    text-align: left;
+    margin-left: 20px;
+    border-right: solid 5px black;
+    padding-bottom: 6px;
+  }
+}
+
+.h3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 0 12px 0;
+  -webkit-text-stroke: 5px; // Add a stroke around the text
+  text-align: center;
+  paint-order: stroke fill;
+  letter-spacing: 0.5px;
+  &.card {
+    margin-left: 10px;
+    text-align: left;
+    padding-bottom: 8px;
+  }
+}
+
+.h4 {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 0 12px 0;
+  -webkit-text-stroke: 5px; // Add a stroke around the text
+  text-align: center;
+  paint-order: stroke fill;
+  letter-spacing: 0.5px;
+  &.card {
+    margin: 0 0 5px 10px;
+    text-align: left;
+    padding: 0;
+  }
+}
+
+.button {
+  font-size: 14px;
+  padding: 5px 10px;
+  background-color: $button-background-green;
+  outline: 4px solid black;
+  margin: 0;
+}

@@ -1,0 +1,13 @@
+$bannerBackground: rgba(51, 72, 71, 0.85); /* #334847 with 85% transparency */
+// $bannerBackground: rgba(0, 0, 0, 0.35); /* #334847 with 85% transparency */
+
+.bannerTitle {
+  background-color: $bannerBackground;
+  border-top: 5px black solid;
+  border-bottom: 5px black solid;
+  margin: 20px 0;
+}
+
+.bannerTitle.short {
+  max-width: 55%;
+}
