@@ -1,0 +1,105 @@
+{
+  "isConnected": true,
+  "sections": {
+    "dailyQuest": {
+      "tasks": [
+        {
+          "id": "task001",
+          "title": "Morning Yoga",
+          "description": "Complete a 15-minute yoga session.",
+          "dayOfWeek": "Wednesday",
+          "time": "15 mins"
+        }
+      ]
+    },
+    "newsSection": [
+      {
+        "id": "news001",
+        "title": "Global Economic Update",
+        "image": "placeholder_for_global_economic_update.jpg",
+        "link": "https://example.com/news/global-economic-update"
+      },
+      {
+        "id": "news002",
+        "title": "Tech Innovations 2024",
+        "image": "placeholder_for_tech_innovations.jpg",
+        "link": "https://example.com/news/tech-innovations-2024"
+      },
+      {
+        "id": "news003",
+        "title": "New Yoga Mats Available",
+        "image": "placeholder_for_yoga_mats.jpg",
+        "itemId": "item001",
+        "link": "https://example.com/shop/item001"
+      },
+      {
+        "id": "news004",
+        "title": "Book Club Choices for June",
+        "image": "placeholder_for_book_club.jpg",
+        "link": "https://example.com/news/book-club-june"
+      }
+    ],
+    "friendsSection": [
+      {
+        "id": "friend001",
+        "name": "Alice",
+        "level": 20,
+        "image": "placeholder_for_alice.jpg",
+        "statsLevel": 5,
+        "pets": [
+          {
+            "id": "pet001",
+            "name": "Bobby",
+            "type": "Dog",
+            "image": "placeholder_for_bobby.jpg"
+          }
+        ]
+      },
+      {
+        "id": "friend002",
+        "name": "Bob",
+        "level": 22,
+        "image": "placeholder_for_bob.jpg",
+        "statsLevel": 6,
+        "pets": [
+          {
+            "id": "pet002",
+            "name": "Whiskers",
+            "type": "Cat",
+            "image": "placeholder_for_whiskers.jpg"
+          }
+        ]
+      },
+      {
+        "id": "friend003",
+        "name": "Carol",
+        "level": 18,
+        "image": "placeholder_for_carol.jpg",
+        "statsLevel": 4,
+        "pets": [
+          {
+            "id": "pet003",
+            "name": "Flutter",
+            "type": "Parrot",
+            "image": "placeholder_for_flutter.jpg"
+          }
+        ]
+      },
+      {
+        "id": "friend004",
+        "name": "Dave",
+        "level": 25,
+        "image": "placeholder_for_dave.jpg",
+        "statsLevel": 7,
+        "pets": [
+          {
+            "id": "pet004",
+            "name": "Nemo",
+            "type": "Fish",
+            "image": "placeholder_for_nemo.jpg"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,19 +1,23 @@
 $card-color-hard: #d55952;
 .card {
   &-component {
-    background-image: url("../../../public/images/card-background-01.jpg");
+    background-image: url('../../../public/images/card-background-01.jpg');
     background-size: cover;
     width: 300px;
     outline: 6px black solid;
-    margin-left: 15px;
     height: 118px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 0 0 25px 15px;
     & .details {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+    }
+    &.right {
+      margin-left: auto;
+      margin-right: 15px;
     }
   }
   &-difficulty {
@@ -41,6 +45,14 @@ $card-color-hard: #d55952;
     letter-spacing: 0.5px;
     &.-hard {
       color: $card-color-hard;
+    }
+  }
+
+  &-shop {
+    & .image {
+      margin: 0 0 0 10px;
+      width: 68px;
+      height: 68px;
     }
   }
 }

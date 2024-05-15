@@ -1,17 +1,25 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HomeLayout :trainingQuestObject="trainingQuestStore" :newsObject="newsStore" :bannersObject="bannerStore" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HomeLayout from "@/components/HomeLayout.vue";
+import { useNewsStore } from "../store/modules/NewsStore.js";
+import { useTrainingQuestStore } from "../store/modules/TrainingQuestStore.js";
+import { useBannerStore } from "../store/modules/BannerStore.js";
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    HomeLayout,
+  },
+  setup() {
+    const bannerStore = useBannerStore();
+    const newsStore = useNewsStore();
+    const trainingQuestStore = useTrainingQuestStore();
+    return { newsStore, bannerStore, trainingQuestStore };
   },
 };
 </script>

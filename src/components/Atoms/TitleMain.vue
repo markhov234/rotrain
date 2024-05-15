@@ -1,10 +1,6 @@
 <template>
-  <component
-    :is="headingLevel"
-    :style="{ '-webkit-text-stroke-color': strokeColor, color: textColor }"
-    :class="[variant, headingLevel]"
-    >{{ text }}</component
-  >
+  <component :is="headingLevel" :style="{ '-webkit-text-stroke-color': strokeColor, color: textColor }"
+    :class="[variant, headingLevel]">{{ text }}</component>
 </template>
 
 <script>
@@ -14,13 +10,21 @@ export default {
       type: Object,
       required: true,
     },
+    cardTitle: {
+      type: String,
+      required: false,
+    },
   },
   computed: {
     headingLevel() {
       return this.titleMain.headingLevel;
     },
     text() {
-      return this.titleMain.text;
+      if (this.cardTitle) {
+        return this.cardTitle;
+      } else {
+        return this.titleMain.text;
+      }
     },
     variant() {
       return this.titleMain.variant;

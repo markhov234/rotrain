@@ -15,9 +15,11 @@ $button-background-green: #38690e;
   font-size: 24px;
   &.title.right {
     text-align: right;
+    margin-right: 20px;
+    border-left: solid 5px black;
+    padding-bottom: 6px;
   }
   &.title.left {
-    -webkit-text-stroke: 5px; // Add a stroke around the text
     text-align: left;
     margin-left: 20px;
     border-right: solid 5px black;
@@ -38,6 +40,7 @@ $button-background-green: #38690e;
     margin-left: 10px;
     text-align: left;
     padding-bottom: 8px;
+    width: 100%;
   }
 }
 

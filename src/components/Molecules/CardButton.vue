@@ -1,5 +1,5 @@
 <template>
-  <div :class="['card-button', variant]">
+  <div :class="['card-button']">
     <TitleMain :title-main="cardTitleMainProps" />
   </div>
 </template>
@@ -12,10 +12,6 @@ export default {
     TitleMain,
   },
   props: {
-    variant: {
-      type: String,
-      required: true,
-    },
     cardTitleMainProps: {
       type: Object,
       required: true,

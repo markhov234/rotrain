@@ -1,12 +1,10 @@
 <template>
-  <div :class="['card-component', variant]">
+  <div v-for="piniaItems in contentItems" :key="piniaItems.id" :class="['card-component', variant]">
+    <TitleMain :cardTitle="piniaItems.title" :title-main="titleMainProps" />
     <div class="details">
-      <TitleMain :title-main="titleMainProps" />
-      <DifficultySub
-        :cardTitleMainProps="buttonTitleMainProps"
-        :cardTitleSubProps="buttonTitleSecondaryProps"
-        variant="card"
-      />
+      <DifficultySub v-if="DifficultySub" :cardTitleMainProps="buttonTitleMainProps"
+        :cardTitleSubProps="buttonTitleSecondaryProps" variant="card" />
+      <CardPrice v-else variant="card" />
     </div>
     <CardButton :cardTitleMainProps="titleButtonProps" />
   </div>
@@ -14,6 +12,7 @@
 
 <script>
 import DifficultySub from "../Molecules/DifficultySub.vue";
+import CardPrice from "../Molecules/CardPrice.vue";
 import CardButton from "../Molecules/CardButton.vue";
 import TitleMain from "../Atoms/TitleMain.vue";
 
@@ -23,9 +22,30 @@ export default {
       type: String,
       required: true,
     },
+    responsePiniaObject: {
+      type: Object,
+      required: true,
+    },
+  },
+  computed: {
+    contentItems() {
+      // Determine which content type to use based on responsePiniaObject
+      if (this.responsePiniaObject.news) {
+        return this.responsePiniaObject.news;
+      } else if (this.responsePiniaObject.shops) {
+        return this.responsePiniaObject.shops;
+      } else if (this.responsePiniaObject.quests) {
+        return this.responsePiniaObject.quests;
+      } else {
+        // Return default content or handle case where no content is available
+        return [];
+      }
+    },
   },
   data() {
     return {
+      DifficultySub: true,
+      cardImage: true,
       buttonTitleMainProps: {
         headingLevel: "h4",
         text: "Difficulty",
@@ -40,8 +60,8 @@ export default {
       },
       titleMainProps: {
         headingLevel: "h3",
-        text: "Monday",
         variant: "card",
+        text: "Accept Quest",
         strokeColor: "black",
       },
       titleButtonProps: {
@@ -55,6 +75,7 @@ export default {
   components: {
     DifficultySub,
     CardButton,
+    CardPrice,
     TitleMain,
   },
 };
