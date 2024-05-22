@@ -2,18 +2,22 @@
   <div v-for="piniaItems in contentItems" :key="piniaItems.id" :class="['card-component', variant]">
     <TitleMain :cardTitle="piniaItems.title" :title-main="titleMainProps" />
     <div class="details">
-      <DifficultySub v-if="DifficultySub" :cardTitleMainProps="buttonTitleMainProps"
+      <DifficultySub v-if="piniaItems.isQuests" :cardTitleMainProps="buttonTitleMainProps"
         :cardTitleSubProps="buttonTitleSecondaryProps" variant="card" />
-      <CardPrice v-else variant="card" />
+      <CardImage v-else variant="card" />
     </div>
-    <CardButton :cardTitleMainProps="titleButtonProps" />
+    <CardButtonQuest v-if="piniaItems.isQuests" :questAccepted="piniaItems.isQuestAccepted" :questId="piniaItems.id"
+      :cardTitleMainProps="titleButtonProps" />
+    <CardButtonShop v-else :cardTitleMainProps="shopButtonProps" />
   </div>
 </template>
 
 <script>
+// DO A NEW COMPONENT FOR THE LOWER PART OF THE CARD
 import DifficultySub from "../Molecules/DifficultySub.vue";
-import CardPrice from "../Molecules/CardPrice.vue";
-import CardButton from "../Molecules/CardButton.vue";
+import CardImage from "../Molecules/CardImage.vue";
+import CardButtonQuest from "../Molecules/CardButtonQuest.vue";
+import CardButtonShop from "../Molecules/CardButtonShop.vue";
 import TitleMain from "../Atoms/TitleMain.vue";
 
 export default {
@@ -24,7 +28,7 @@ export default {
     },
     responsePiniaObject: {
       type: Object,
-      required: true,
+      required: false,
     },
   },
   computed: {
@@ -44,8 +48,7 @@ export default {
   },
   data() {
     return {
-      DifficultySub: true,
-      cardImage: true,
+      difficultySub: null,
       buttonTitleMainProps: {
         headingLevel: "h4",
         text: "Difficulty",
@@ -70,13 +73,20 @@ export default {
         variant: "button",
         strokeColor: "black",
       },
+      shopButtonProps: {
+        headingLevel: "p",
+        text: "Consult the shop",
+        variant: "button-shop",
+        strokeColor: "black",
+      },
     };
   },
   components: {
     DifficultySub,
-    CardButton,
-    CardPrice,
+    CardButtonQuest,
+    CardImage,
     TitleMain,
+    CardButtonShop
   },
 };
 </script>

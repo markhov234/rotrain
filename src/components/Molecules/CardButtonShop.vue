@@ -1,6 +1,7 @@
 <template>
-  <div :class="['card-button']">
+  <div :class="['card-button-shop']">
     <TitleMain :title-main="cardTitleMainProps" />
+    <span> <img src="@/assets/images/shop-icons.svg" alt="SVG Image" /></span>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-    <div :class="['card-shop', variant]">
+    <div :class="['card-image', variant]">
         <img class="image" src="https://placehold.co/68x68" />
     </div>
 </template>
@@ -11,6 +11,10 @@ export default {
 
     },
     props: {
+        variant: {
+            type: String,
+            required: true,
+        },
     }
 };
 </script>

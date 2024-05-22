@@ -1,6 +1,8 @@
 <template>
-  <component :is="headingLevel" :style="{ '-webkit-text-stroke-color': strokeColor, color: textColor }"
-    :class="[variant, headingLevel]">{{ text }}</component>
+  <Transition mode="out-in" name="fade-in" :key="this.titleMain">
+    <component :is="headingLevel" :style="{ '-webkit-text-stroke-color': strokeColor, color: textColor }"
+      :class="[variant, headingLevel]">{{ text }}</component>
+  </Transition>
 </template>
 
 <script>

@@ -27,6 +27,12 @@ export const useBannerStore = defineStore('bannerStore', {
         variant: 'left title',
         strokeColor: 'black',
       },
+      {
+        headingLevel: 'h2',
+        text: 'Friends',
+        variant: 'left title',
+        strokeColor: 'black',
+      },
     ],
   }),
   getters: {

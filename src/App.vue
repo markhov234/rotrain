@@ -1,13 +1,14 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
   <router-view />
+  <MenuMain />
 </template>
 <script>
+import MenuMain from "@/components/Organisms/MenuMain.vue";
 export default {
   name: "App",
+  components: {
+    MenuMain,
+  },
 };
 </script>
 <style lang="scss">

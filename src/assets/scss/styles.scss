@@ -1,6 +1,9 @@
 // styles.scss
 $background-primary-color: #334847;
 @import './utils/generals.scss';
-// @import "./atoms/title.scss";
+@import './atoms/title.scss';
 @import './Organisms/SectionCard.scss';
+@import './Organisms/ProfileBanner.scss';
+@import './Organisms/Menu.scss';
 @import './molecules/bannerTitle.scss';
+@import './molecules/CardButton.scss';

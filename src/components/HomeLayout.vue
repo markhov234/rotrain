@@ -2,7 +2,8 @@
   <BannerTitle :titleMainProps="homeBanner" variant="long" />
   <SectionCard :bannerInfo="questBanner" :responsePiniaObject="trainingQuestObject" variantSide="left" />
   <SectionCard :bannerInfo="newsBanner" :responsePiniaObject="newsObject" variantSide="right" />
-  <SectionCard :bannerInfo="shopBanner" :responsePiniaObject="newsObject" variantSide="left" />
+  <SectionCard :bannerInfo="friendBanner" :responsePiniaObject="friendsObject" variantSide="friends" />
+  <!-- Make a sectionCardFriends here so it can have the friends sections -->
 </template>
 
 <script>
@@ -13,6 +14,7 @@ export default {
     newsObject: Object,
     bannersObject: Object,
     trainingQuestObject: Object,
+    friendsObject: Object,
   },
   data() {
     return {
@@ -45,6 +47,8 @@ export default {
     },
     questBanner() {
       return this.bannersObject.getBannerByText("Daily Quests");
+    }, friendBanner() {
+      return this.bannersObject.getBannerByText("Friends");
     },
   },
   setup() {

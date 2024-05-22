@@ -1,0 +1,25 @@
+.button {
+  font-size: 14px;
+  padding: 5px 10px;
+  outline: 4px solid black;
+  margin: 0;
+  text-align: center;
+  -webkit-text-stroke: 5px;
+  paint-order: stroke fill;
+  letter-spacing: 0.5px;
+}
+
+.button-shop {
+  font-size: 14px;
+  padding: 5px 10px;
+  margin: 0;
+}
+
+.card {
+  &-button-shop {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+    margin-right: 10px;
+  }
+}

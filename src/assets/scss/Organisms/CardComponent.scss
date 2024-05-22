@@ -1,6 +1,13 @@
 $card-color-hard: #d55952;
+$card-color-friends-lvl: #c96b0f;
+$card-color-friends-username-background: #833f2d;
+$card-color-quest-accepted: #dac0a8;
+$button-background-green: #38690e;
+
 .card {
   &-component {
+    position: relative;
+    overflow: hidden;
     background-image: url('../../../public/images/card-background-01.jpg');
     background-size: cover;
     width: 300px;
@@ -19,6 +26,13 @@ $card-color-hard: #d55952;
       margin-left: auto;
       margin-right: 15px;
     }
+    &.friends {
+      width: 175px;
+      height: 275px;
+      margin: 0 0 25px 0;
+      display: flex;
+      flex-direction: column;
+    }
   }
   &-difficulty {
     // margin: 10px 0 10px 10px;
@@ -32,8 +46,17 @@ $card-color-hard: #d55952;
     }
   }
   &-button {
+    width: 100px;
+    height: 30px;
     height: fit-content;
     margin: auto 10px 10px 0;
+    background-color: $button-background-green;
+    &.accepted {
+      transition: ease-in 0.3s;
+      background-color: $card-color-quest-accepted;
+      & .buton.p {
+      }
+    }
   }
   &.sub {
     font-size: 16px;
@@ -48,11 +71,64 @@ $card-color-hard: #d55952;
     }
   }
 
-  &-shop {
+  & {
     & .image {
       margin: 0 0 0 10px;
       width: 68px;
       height: 68px;
+    }
+  }
+
+  &-section {
+    &-friends {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+  &-image {
+    &.friends {
+      flex: 4;
+      width: 100%;
+      height: fit-content;
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &-friends {
+    &-title {
+      flex: 1;
+      padding: 0 10px;
+      margin: 0;
+      font-size: 20px;
+      background-color: $card-color-friends-username-background;
+      -webkit-text-stroke: 5px; // Add a stroke around the text
+      text-align: left;
+      paint-order: stroke fill;
+      -webkit-text-stroke-color: black;
+      &-lvl {
+        font-size: 24px;
+        margin-right: 15px;
+        color: $card-color-hard;
+      }
+    }
+  }
+  &-pets {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &-quest {
+    &-popup {
+      position: absolute;
+      right: 0;
+      top: 0;
     }
   }
 }
