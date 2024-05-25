@@ -1,10 +1,10 @@
 <template>
   <div :class="['card-difficulty', variant]">
     <TitleMain :title-main="cardTitleMainProps" />
-    <span class="details"
-      ><img src="https://placehold.co/32x24" />
-      <TitleMain :title-main="cardTitleSubProps"
-    /></span>
+    <span class="details">
+      <img v-if="difficultySub" :src="require(`@/assets/images/${difficultySub.toLowerCase()}-icons.png`)" alt="">
+      <p :class="['card sub', difficultySub.toLowerCase()]">{{ difficultySub }}</p>
+    </span>
   </div>
 </template>
 
@@ -27,6 +27,10 @@ export default {
     cardTitleSubProps: {
       type: Object,
       required: true,
+    },
+    difficultySub: {
+      type: String,
+      required: false,
     },
   },
   //   data() {

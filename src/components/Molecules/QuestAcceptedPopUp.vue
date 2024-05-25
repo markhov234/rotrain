@@ -1,9 +1,8 @@
 <template>
     <div class="card-quest-popup">
-        <p>{{ questLinkTime.time }}</p>
-        <router-link :to="{ name: 'TrainingView', params: { taskId: this.questLinkTime.exercisesId } }">Fetch
-            exercises</router-link>
-
+        <router-link class="card-quest-popup-link"
+            :to="{ name: 'TrainingDetailView', params: { taskId: this.questLinkTime.exercisesId } }">Quest
+            Details ! -> </router-link>
     </div>
 </template>
 

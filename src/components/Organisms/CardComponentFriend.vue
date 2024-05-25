@@ -2,7 +2,7 @@
   <div class="card-section-friends">
     <div v-for="piniaItem in contentItems" :key="piniaItem.id" :class="['card-component friends']">
       <TitleCardFriends :lvl="piniaItem.level" :username="piniaItem.username" />
-      <CardImage variant="friends" />
+      <CardImage :avatarImgUrl="piniaItem.smallCardPicture" variant="friends" />
       <CardPetsSection :friendId="piniaItem.id" />
     </div>
   </div>

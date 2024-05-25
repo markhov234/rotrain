@@ -1,6 +1,6 @@
 <template>
     <div :class="['card-image', variant]">
-        <img class="image" src="https://placehold.co/68x68" />
+        <img class="image" :src="imageUrl" />
     </div>
 </template>
 
@@ -15,9 +15,21 @@ export default {
             type: String,
             required: true,
         },
+        avatarImgUrl: {
+            type: String,
+            required: false,
+        },
+    },
+    computed: {
+        imageUrl() {
+            // Check if avatarImgUrl is provided and then construct the image URL
+            if (this.avatarImgUrl) {
+                return require(`@/assets/images/${this.avatarImgUrl}`);
+            } else {
+                // If avatarImgUrl is not provided, return the placeholder URL
+                return 'https://placehold.co/69x68';
+            }
+        }
     }
 };
 </script>
-<style lang="scss">
-@import "../../assets/scss/molecules/bannerTitle.scss";
-</style>

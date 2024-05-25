@@ -7,12 +7,25 @@ html {
 }
 
 body {
-  background-color: $background-primary-color;
+  // background-color: $background-primary-color;
+  // color: white;
+  // margin: 0;
+  // padding: 0;
+  // background-size: cover;
+  background-image: url('../public/images/background_home.jpg');
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #334847;
   color: white;
   margin: 0;
   padding: 0;
-  background-size: cover;
-  background-image: url('../public/images/background_home.jpg');
+  background-size: cover; // Cover the entire container
+  background-position: center top; // Center the image vertically
+  transition: opacity 0.5s;
 }
 
 .home {

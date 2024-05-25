@@ -1,7 +1,14 @@
 <template>
   <div class="training">
     <h1>This is a training room</h1>
-    <ProfileBanner />
+    <h1>This is a training room</h1>
+    <h1>This is a training room</h1>
+    <h1>This is a training room</h1>
+    <h1>This is a training room</h1>
+    <h1>This is a training room</h1>
+    <h1>This is a training room</h1>
+    <h1>This is a training room</h1>
+    <h1>This is a training room</h1>
     <div v-if="isLoading">Loading...</div>
     <div v-else>
       <!-- Render exercises here -->
@@ -10,13 +17,11 @@
 </template>
 
 <script>
-import ProfileBanner from "@/components/Organisms/ProfileBanner.vue";
 import { useTrainingQuestExerciseStore } from "@/store/modules/TrainingQuestExerciseStore";
 
 export default {
   name: "TrainingView",
   components: {
-    ProfileBanner,
   },
   data() {
     return {

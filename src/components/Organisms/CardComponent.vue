@@ -2,8 +2,8 @@
   <div v-for="piniaItems in contentItems" :key="piniaItems.id" :class="['card-component', variant]">
     <TitleMain :cardTitle="piniaItems.title" :title-main="titleMainProps" />
     <div class="details">
-      <DifficultySub v-if="piniaItems.isQuests" :cardTitleMainProps="buttonTitleMainProps"
-        :cardTitleSubProps="buttonTitleSecondaryProps" variant="card" />
+      <DifficultySub v-if="piniaItems.isQuests" :difficultySub="piniaItems.difficulty"
+        :cardTitleMainProps="buttonTitleMainProps" :cardTitleSubProps="buttonTitleSecondaryProps" variant="card" />
       <CardImage v-else variant="card" />
     </div>
     <CardButtonQuest v-if="piniaItems.isQuests" :questAccepted="piniaItems.isQuestAccepted" :questId="piniaItems.id"

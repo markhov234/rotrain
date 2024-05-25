@@ -1,8 +1,12 @@
 $card-color-hard: #d55952;
+$card-color-intermediate: #b68a1a;
+$card-color-easy: #09e01e;
+
 $card-color-friends-lvl: #c96b0f;
 $card-color-friends-username-background: #833f2d;
 $card-color-quest-accepted: #dac0a8;
 $button-background-green: #38690e;
+$card-color-quest-accepted-backgrond: #334847;
 
 .card {
   &-component {
@@ -43,6 +47,10 @@ $button-background-green: #38690e;
       flex-wrap: wrap;
       flex-direction: row;
       margin-bottom: 10px;
+      & img {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
   &-button {
@@ -66,8 +74,15 @@ $button-background-green: #38690e;
     text-align: left;
     paint-order: stroke fill;
     letter-spacing: 0.5px;
-    &.-hard {
+    -webkit-text-stroke-color: black;
+    &.hard {
       color: $card-color-hard;
+    }
+    &.intermediate {
+      color: $card-color-intermediate;
+    }
+    &.easy {
+      color: $card-color-easy;
     }
   }
 
@@ -91,9 +106,11 @@ $button-background-green: #38690e;
       flex: 4;
       width: 100%;
       height: fit-content;
+      outline: 6px black solid;
       & img {
         width: 100%;
         height: 100%;
+        filter: brightness(0.75);
       }
     }
   }
@@ -129,6 +146,26 @@ $button-background-green: #38690e;
       position: absolute;
       right: 0;
       top: 0;
+      padding: 5px;
+      margin: 10px;
+      background-color: $card-color-friends-lvl;
+      outline: 4px solid black;
+
+      &-link {
+        display: flex;
+        font-size: 12px;
+        color: white;
+        text-decoration: none;
+        font-weight: 400;
+        -webkit-text-stroke: 5px;
+        text-align: center;
+        paint-order: stroke fill;
+        -webkit-text-stroke-color: black;
+        letter-spacing: 0.5px;
+      }
+      &-text {
+        margin: 0;
+      }
     }
   }
 }

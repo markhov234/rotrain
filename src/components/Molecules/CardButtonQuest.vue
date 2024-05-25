@@ -57,21 +57,30 @@ export default {
 };
 </script>
 <style lang="scss">
-/*
-  Enter and leave animations can use different
-  durations and timing functions.
-*/
 .slide-fade-enter-active {
-  transition: all 0.3s ease-out;
+  animation: slide-fade-enter 0.5s ease-out;
 }
 
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
+@keyframes slide-fade-enter {
+  0% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
 
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(100px);
-  opacity: 0;
-}
-</style>
+  50% {
+    transform: translateX(-5%);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateX(0);
+  }
+
+  85% {
+    transform: translateX(-2%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}</style>
