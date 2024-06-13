@@ -86,7 +86,7 @@ export const useAccountStore = defineStore('accountStore', {
     health: 100,
     inventory: [], // Reference to inventory store
     paidMoney: 0,
-    questMoney: 0,
+    questMoney: 250,
     shopHistoryId: [], // Array to store IDs of shop history
   }),
 
@@ -113,18 +113,37 @@ export const useAccountStore = defineStore('accountStore', {
     },
 
     // Define actions to update account information
-    // For example:
-    updateLevel(newLevel) {
-      this.level = newLevel
-    },
+    // For example
 
     updateExperience(newExperience) {
-      this.experience = newExperience
+      this.experience += newExperience
     },
     updateLargeImage(largeImageID) {
       this.profileAvatarLarge = largeImageID
     },
 
+    unlockedQuestMoney(avatarId) {
+      const avatar = this.avatars.find((avatar) => avatar.id === avatarId)
+
+      if (avatar && this.questMoney >= avatar.questMoneyPrice) {
+        // Deduct the quest money
+        this.questMoney -= avatar.questMoneyPrice
+
+        // Unlock the avatar
+        avatar.locked = false
+
+        // Optionally, you might want to set this avatar as the profile avatar
+        this.profileAvatarLarge = avatarId
+
+        console.log(`Avatar ${avatarId} unlocked!`)
+      } else {
+        const moneyMissing = avatar
+          ? avatar.questMoneyPrice - this.questMoney
+          : 0
+
+        return { success: false, moneyMissing }
+      }
+    },
     acceptQuest(questId) {
       this.questIdsAccepted.push(questId)
     },
