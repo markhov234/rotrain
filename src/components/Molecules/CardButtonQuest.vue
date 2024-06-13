@@ -1,9 +1,9 @@
 <template>
-  <div :class="['card-button', { 'accepted': this.questAccepted }]" @click="acceptQuest(this.questId)">
+  <div :class="['card-button', { 'accepted': questAccepted }]" @click="acceptQuest(questId)">
     <TitleMain :title-main="updatedCardTitleMainProps" />
   </div>
   <Transition name="slide-fade" appear>
-    <QuestAcceptedPopUp v-if="questAccepted" :questLinkTime="questLinkTime" />
+    <QuestAcceptedPopUp v-if="questAccepted" :quest-link-time="questLinkTime" />
   </Transition>
 </template>
 
@@ -83,4 +83,5 @@ export default {
   100% {
     transform: translateX(0);
   }
-}</style>
+}
+</style>

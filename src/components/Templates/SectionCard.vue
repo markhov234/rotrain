@@ -1,7 +1,7 @@
 <template>
   <div :class="['section-card', variantSide]">
-    <BannerTitle :titleMainProps="bannerInfo" variant="short" />
-    <component :is="cardComponentType" :responsePiniaObject="responsePiniaObject" :variant="cardComponentVariant" />
+    <BannerTitle :title-main-props="bannerInfo" variant="short" />
+    <component :is="cardComponentType" :response-pinia-object="responsePiniaObject" :variant="cardComponentVariant" />
   </div>
 </template>
 
@@ -10,6 +10,10 @@ import BannerTitle from "../Molecules/BannerTitle.vue";
 import CardComponent from "../Organisms/CardComponent.vue";
 import CardComponentFriends from "../Organisms/CardComponentFriend.vue";
 export default {
+  components: {
+    BannerTitle,
+    CardComponent,
+  },
   props: {
     variantSide: {
       type: String,
@@ -52,10 +56,6 @@ export default {
         return CardComponent;
       }
     },
-  },
-  components: {
-    BannerTitle,
-    CardComponent,
   },
 };
 </script>

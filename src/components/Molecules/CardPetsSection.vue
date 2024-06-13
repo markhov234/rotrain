@@ -1,6 +1,6 @@
 <template>
     <div class="card-pets">
-        <div class="card-pets-image" v-for="pet in selectedFriend.pets " :key="pet.id">
+        <div v-for="pet in selectedFriend.pets " :key="pet.id" class="card-pets-image">
             <img class="image" src="https://placehold.co/30x30" alt={{pet.name}} />
         </div>
     </div>

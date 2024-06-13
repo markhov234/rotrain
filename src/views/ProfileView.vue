@@ -1,14 +1,19 @@
 <template>
   <div class="profile">
-    <h1>This is an about a Profile Page </h1>
+    <OrganismProfileCard />
+    <MoleculeProfileButton />
   </div>
 </template>
 
 
 <script>
+import OrganismProfileCard from "@/components/Develop/OrganismProfileCard.vue";
+import MoleculeProfileButton from "@/components/Develop/MoleculeProfileButton.vue";
 export default {
   name: "ProfileView",
   components: {
+    OrganismProfileCard,
+    MoleculeProfileButton
   },
   setup() {
   },

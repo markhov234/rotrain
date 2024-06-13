@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <HomeLayout :friendsObject="friendsStore" :trainingQuestObject="trainingQuestStore" :newsObject="newsStore"
-      :bannersObject="bannerStore" />
+    <HomeLayout :friends-object="friendsStore" :training-quest-object="trainingQuestStore" :news-object="newsStore"
+      :banners-object="bannerStore" />
   </div>
 </template>
 

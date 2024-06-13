@@ -1,0 +1,25 @@
+$profile-button-background: #35312c;
+$profile-button-background-hover: #334847;
+$profile-button-background-active: #d1670c;
+.profile-button {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: none;
+  color: inherit;
+  font: inherit;
+  justify-content: center;
+  cursor: pointer;
+  margin: 10px 0;
+  padding: 0 5px 4px;
+  background: $profile-button-background;
+  border: 5px black solid;
+  transition: ease-in-out 0.15s;
+  &:hover {
+    background-color: $profile-button-background-hover;
+  }
+  &:active {
+    background-color: $profile-button-background-active;
+  }
+}

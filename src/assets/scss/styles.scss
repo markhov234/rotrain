@@ -2,8 +2,12 @@
 $background-primary-color: #334847;
 @import './utils/generals.scss';
 @import './atoms/title.scss';
+@import './atoms/profile-button.scss';
 @import './Organisms/SectionCard.scss';
+@import './Organisms/ProfileAvatarSelection.scss';
+@import './Organisms/OrganismProfileCard.scss';
 @import './Organisms/ProfileBanner.scss';
 @import './Organisms/Menu.scss';
 @import './molecules/bannerTitle.scss';
+@import './molecules/profileBottom.scss';
 @import './molecules/CardButton.scss';

@@ -2,6 +2,8 @@
   box-sizing: border-box;
   position: fixed;
   width: 100%;
+  text-decoration: none;
+  color: white;
   height: 105px;
   display: flex;
   background-image: url('../public/images/profile-banner-wide.jpg');
@@ -45,6 +47,10 @@
   }
 
   & .level {
+    -webkit-text-stroke: 5px;
+    paint-order: stroke fill;
+    -webkit-text-stroke-color: black;
+    letter-spacing: 0.5px;
     flex: 2;
     display: flex;
     justify-content: center;
@@ -52,6 +58,22 @@
     & p {
       text-align: center;
       width: 100%;
+    }
+    & .exp-bar {
+      width: 100%;
+      margin: 0px 25px;
+      background-color: rgba(113, 126, 126, 0.75);
+      height: 6px;
+      border: solid black 2px;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: #d1670c;
+      }
     }
   }
 
