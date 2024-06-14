@@ -8,12 +8,15 @@
         ]" @click="setFocusedAvatar(avatarLarge.id)">
             <Transition name="fade">
                 <div v-if="avatarLarge.id === focusedAvatarId" class="profile-avatar-section-inside">
-                    <div v-if="avatarLarge.locked">
-                        <button>{{ avatarLarge.paidMoneyPrice }}</button>
-                        <button @click.stop="updateSkinMoney(avatarLarge.id)">
+                    <div v-if="avatarLarge.locked" class="profile-avatar-button-section">
+                        <button class="profile-avatar-button-paid">{{ avatarLarge.paidMoneyPrice }}</button>
+                        <button
+                            :class="['profile-avatar-button-quest', { 'unlocked': accountStoreMoneyQuest(avatarLarge.id), 'locked': !accountStoreMoneyQuest(avatarLarge.id) }]"
+                            @click="updateSkinMoney(avatarLarge.id)">
                             {{ avatarLarge.questMoneyPrice }}
                         </button>
-                        <p v-show="notEnoughMoneyQuest">Not enough quest money. You need {{ moneyQuestMissing }} more.</p>
+                        <p v-show="notEnoughMoneyQuest">Not enough quest money. You need {{ moneyQuestMissing }} more.
+                        </p>
                     </div>
                     <button v-else @click="changeSkin(avatarLarge.id)">Use this skin</button>
                 </div>
@@ -41,6 +44,11 @@ export default {
             moneyQuestMissing.value = 0; // Reset when changing focus
         };
 
+        const accountStoreMoneyQuest = (avatarId) => {
+            const avatar = accountStore.avatars.find(av => av.id === avatarId);
+            return accountStore.questMoney >= avatar.questMoneyPrice;
+        };
+
         const updateSkinMoney = (selectedAvatarId) => {
             const result = accountStore.unlockedQuestMoney(selectedAvatarId);
             if (result && result.success === false) {
@@ -64,12 +72,12 @@ export default {
             notEnoughMoneyQuest,
             moneyQuestMissing,
             updateSkinMoney,
-            changeSkin
+            changeSkin,
+            accountStoreMoneyQuest
         };
     }
 };
 </script>
-
 <style lang="scss">
 .fade-enter-active,
 .fade-leave-active {

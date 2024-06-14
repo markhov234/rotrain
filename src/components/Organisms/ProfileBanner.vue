@@ -6,7 +6,9 @@
         </div>
         <div class="level">
             <p>LVL : <span class="number">{{ accountStore.level }}</span></p>
-            <span> Money: <span>{{ accountStore.questMoney }} </span></span>
+            <p class="money"> <span> Money:</span> <span>{{ accountStore.questMoney }} </span>
+                <span>{{ accountStore.paidMoney }} </span>
+            </p>
             <span class="exp-bar" :style="{ '--after-width': afterWidth }"></span>
         </div>
         <div class="avatar">

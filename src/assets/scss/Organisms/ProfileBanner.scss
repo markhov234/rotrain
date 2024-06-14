@@ -55,7 +55,25 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    height: fit-content;
+    & .money {
+      margin: 5px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      & p {
+        width: 100%;
+        text-align: center;
+      }
+      & span:first-child {
+        width: 100%;
+      }
+      & span {
+        width: 45%;
+      }
+    }
     & p {
+      margin: 5px 0 2px;
       text-align: center;
       width: 100%;
     }
